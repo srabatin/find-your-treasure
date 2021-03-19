@@ -23,37 +23,40 @@ describe("Class Map", () => {
   });
 
   describe(".generateMap", () => {
-    // setup
+    // exercise 
     testMap.generateMap();
 
     it("generates a map array", () => {
-      // setup
+      // exercise 
       const result = Array.isArray(testMap.map);
-      
+
       // verify
       assert.ok(result);
     });
 
-    it("generates a map random array", () => {
-      // setup
-      
+    it("generates a random random array", () => {
+      // exercuse
       let testMap2 = new Map(height, width, percentHoles);
       testMap2.generateMap();
+
+      // setup
       const map1 = testMap.map;
       const map2 = testMap2.map;
 
       // verify
       assert.notDeepStrictEqual(map1, map2);
-      
+
     });
 
     it("generates a map array of the desired dimensions", () => {
       // setup
-      const resultRows = testMap.map.length;
-      const resultCols = testMap.map[0].length;
       const expectedRows = height;
       const expectedCols = width;
-
+      
+      // exercise
+      const resultRows = testMap.map.length;
+      const resultCols = testMap.map[0].length;
+      
       // verify
       assert.strictEqual(resultRows, expectedRows);
       assert.strictEqual(resultCols, expectedCols);
@@ -62,15 +65,17 @@ describe("Class Map", () => {
 
     it("generates a map array widh the right amount of holes", () => {
       // setup
+      const expectedHoles = Math.floor(height * width * percentHoles);
       let resultHoles = 0;
+
+      // exercise
       for (let i = 0; i < testMap.map.length; i++) {
-        testMap.map[i].forEach(function(element) {
+        testMap.map[i].forEach(function (element) {
           if (element === testMap.hole) {
             resultHoles++;
           }
         })
       }
-      const expectedHoles = Math.floor(height * width * percentHoles);
       
       // verify
       assert.strictEqual(resultHoles, expectedHoles);
@@ -78,25 +83,31 @@ describe("Class Map", () => {
 
     it("generates a map with a player on it", () => {
       // setup
-            
+      let index = -1;
+
+      // exercise
+      for (i = 0; i < testMap.map.length; i++) {
+        index = testMap.map[i].findIndex(element => element === testMap.player);
+        if (index >= 0) {break}
+      }
+      
       // verify
-     
+      assert.ok(index >= 0);
     });
 
     it("generates a map with a treasure on it", () => {
       // setup
-            
-      // verify
-     
-    });
+      let index = -1;
 
-    it("generates a map with a treasure on it", () => {
-      // setup
-            
+      // exercise
+      for (i = 0; i < testMap.map.length; i++) {
+        index = testMap.map[i].findIndex(element => element === testMap.treasure);
+        if (index >= 0) {break}
+      }
+      
       // verify
-     
+      assert.ok(index >= 0);
     });
-    
 
   });
 });
