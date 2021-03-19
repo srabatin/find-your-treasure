@@ -1,0 +1,7 @@
+init git DONE
+connect git to github DONE
+init npm
+install mocha
+configure test in package.json
+write test
+write code

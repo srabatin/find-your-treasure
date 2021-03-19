@@ -1,0 +1,22 @@
+{
+  "name": "find-your-treasure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srabatin/find-your-treasure.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srabatin/find-your-treasure/issues"
+  },
+  "homepage": "https://github.com/srabatin/find-your-treasure#readme",
+  "devDependencies": {
+    "mocha": "^8.3.2"
+  }
+}
